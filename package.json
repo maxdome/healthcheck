@@ -1,0 +1,17 @@
+{
+  "name": "mxd-healthcheck",
+  "description": "Provide healthcheck routes for load balancers and debugging",
+  "version": "1.0.0",
+  "homepage": "http://github.com/maxdome/healthcheck",
+  "readmeFilename": "README.md",
+  "main": "src/lib.js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "lodash": "^4.6.1",
+    "superagent": "^1.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxdome/healthcheck.git"
+  }
+}
