@@ -5,7 +5,7 @@ const async = require('async');
 function healthcheck(services, callback) {
   const fns = [];
   const checkresults = {};
-  for (const identifier in services) {
+  for (const identifier in services || {}) {
     fns.push((subCallback) => {
       services[identifier]((err) => {
         if (err) {

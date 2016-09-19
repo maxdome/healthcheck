@@ -1,7 +1,7 @@
 {
   "name": "mxd-healthcheck",
   "description": "Provide healthcheck routes for load balancers and debugging",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "homepage": "http://github.com/maxdome/healthcheck",
   "readmeFilename": "README.md",
   "main": "src/lib.js",
