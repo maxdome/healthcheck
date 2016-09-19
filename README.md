@@ -32,6 +32,12 @@ Check functions for some common external services
 const service = healthcheck.checkhelper.bbe(/* connection config */);
 ```
 
+## healthcheckApp (= bifrost, heimdall, skidbladnir)
+
+```
+const service = healthcheck.checkhelper.healthcheckApp(/* connection config */);
+```
+
 ## interfacemanager (= mmw-proxy, = api)
 
 ```
