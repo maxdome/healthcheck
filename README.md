@@ -1,9 +1,10 @@
 # example
 
 ```
-const healthcheck = require('mxd-healthcheck')(config);
+const { checkhelper, healthcheck } = require('mxd-healthcheck')(config, app);
+
 const services = {};
-healthcheck.healthcheck(app, services);
+healthcheck(services);
 ```
 
 
@@ -29,25 +30,25 @@ Check functions for some common external services
 ## bbe (= mmw)
 
 ```
-const service = healthcheck.checkhelper.bbe(/* connection config */);
+const service = checkhelper.bbe(/* connection config */);
 ```
 
 ## healthcheckApp (= bifrost, heimdall, skidbladnir)
 
 ```
-const service = healthcheck.checkhelper.healthcheckApp(/* connection config */);
+const service = checkhelper.healthcheckApp(/* connection config */);
 ```
 
 ## interfacemanager (= mmw-proxy, = api)
 
 ```
-const service = healthcheck.checkhelper.interfacemanager(/* connection config */);
+const service = checkhelper.interfacemanager(/* connection config */);
 ```
 
 ## redis
 
 ```
-const service = healthcheck.checkhelper.redis(client, { read: true, write: true });
+const service = checkhelper.redis(client, { read: true, write: true });
 ```
 
 
