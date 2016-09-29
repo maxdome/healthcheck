@@ -1,13 +1,14 @@
-# example
+# Example
 
 ```
-const healthcheck = require('mxd-healthcheck')(config);
+const { checkhelper, healthcheck } = require('mxd-healthcheck')(config, app);
+
 const services = {};
-healthcheck.healthcheck(app, services);
+healthcheck(services);
 ```
 
 
-# services
+# Services
 
 List of check functions for the external services
 
@@ -26,33 +27,33 @@ const service = (callback) => {
 
 Check functions for some common external services
 
-## bbe (= mmw)
+## BBE (= MMW)
 
 ```
-const service = healthcheck.checkhelper.bbe(/* connection config */);
+const service = checkhelper.bbe(/* connection config */);
 ```
 
-## healthcheckApp (= bifrost, heimdall, skidbladnir)
+## Healthcheck App (= Bifrost, Heimdall, Skidbladnir)
 
 ```
-const service = healthcheck.checkhelper.healthcheckApp(/* connection config */);
+const service = checkhelper.healthcheckApp(/* connection config */);
 ```
 
-## interfacemanager (= mmw-proxy, = api)
+## Interfacemanager (= MMW-Proxy, = API)
 
 ```
-const service = healthcheck.checkhelper.interfacemanager(/* connection config */);
+const service = checkhelper.interfacemanager(/* connection config */);
 ```
 
-## redis
+## Redis
 
 ```
-const service = healthcheck.checkhelper.redis(client, { read: true, write: true });
+const service = checkhelper.redis(client, { read: true, write: true });
 ```
 
 
-# routes
+# Routes
 
-* ```/health/app```: response only the status of the app without checking the external services
-* ```/health/details```: response the reason instead of ```ERROR``` for the external serives
-* ```/health/summary```: response only the status of the external services with ```OK``` and ```ERROR``` 
+* `/health/app`: response only the status of the app without checking the external services
+* `/health/details`: response the reason instead of `ERROR` for the external serives
+* `/health/summary`: response only the status of the external services with `OK` and `ERROR` 

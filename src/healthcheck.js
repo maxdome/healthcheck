@@ -33,7 +33,9 @@ function healthcheck(services, callback) {
   });
 }
 
-module.exports = () => (app, services) => {
+module.exports = app => {
+  let services = {};
+
   app.get('/health/app', (req, res) => {
     res.send({ status: 'OK' });
   });
@@ -57,4 +59,6 @@ module.exports = () => (app, services) => {
       }
     });
   });
+
+  return _services => { services = _services; };
 };

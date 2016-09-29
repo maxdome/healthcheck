@@ -2,7 +2,7 @@
 
 const async = require('async');
 
-module.exports = () => (client, options) => (callback) => {
+module.exports = (client, options) => callback => {
   const fns = [];
   if (options.read) {
     fns.push((subCallback) => {
