@@ -3,8 +3,10 @@
 const request = require('superagent');
 
 module.exports = options => callback => {
+  const baseURL = options.url || (options.protocol + '://' + options.hostname + '/' + options.path);
+
   request
-    .get(options.protocol + '://' + options.hostname + '/' + options.path + '/admin/monitoring/lbcheck')
+    .get(baseURL + '/admin/monitoring/lbcheck')
     .timeout(5000)
     .end(callback);
 };
