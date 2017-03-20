@@ -3,6 +3,8 @@
 const request = require('superagent');
 
 module.exports = options => callback => {
+  options.protocol = options.protocol.split(':')[0];
+
   const baseURL = options.url || (options.protocol + '://' + options.hostname + '/interfacemanager-2.1');
 
   request
